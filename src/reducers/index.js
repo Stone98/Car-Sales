@@ -1,3 +1,5 @@
+
+
 export const initialState = {
     additionalPrice: 0,
     car: {
@@ -38,8 +40,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 car: {
                     ...state.car,
+                    features: state.car.features.filter(feature => feature.id !== id),
                     additionalPrice: (state.additionalPrice - price),
-                    features: state.car.features.filter(feature => feature.id !== id)
                 }
             });
         default:
