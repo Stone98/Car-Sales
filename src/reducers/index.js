@@ -38,10 +38,10 @@ const reducer = (state = initialState, action) => {
             const { id, price } = action.payload
             return ({
                 ...state,
+                additionalPrice: (state.additionalPrice - price),
                 car: {
                     ...state.car,
-                    features: state.car.features.filter(feature => feature.id !== id),
-                    additionalPrice: (state.additionalPrice - price),
+                    features: state.car.features.filter(feature => feature.id !== id)
                 }
             });
         default:

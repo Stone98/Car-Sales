@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { removeFeature } from '../actions/index';
 const AddedFeature = props => {
   const { feature, removeFeature } = props;
+
   const handleClick = () => {
     removeFeature(feature);
   }
